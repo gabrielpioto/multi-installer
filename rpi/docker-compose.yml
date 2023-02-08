@@ -46,3 +46,13 @@ services:
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
+
+  ddclient:
+    image: lscr.io/linuxserver/ddclient:latest
+    container_name: ddclient
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /media/HD-E1/rpi/configs/ddclient:/config
+    restart: unless-stopped
