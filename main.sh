@@ -19,6 +19,7 @@ sudo apt install -y --no-install-recommends \
   containerd.io \
   docker-buildx-plugin \
   docker-compose-plugin \
+  git \
   ./vscode.deb
 
 rm vscode.deb
