@@ -8,9 +8,11 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo apt update
-
 curl -fsSLo vscode.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+sudo apt update
 
 sudo apt install -y --no-install-recommends \
   brave-browser \
