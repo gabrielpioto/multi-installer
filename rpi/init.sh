@@ -23,4 +23,4 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 
-curl 'https://raw.githubusercontent.com/gabrielpioto/multi-installer/main/rpi/docker-compose.yml' | docker compose up -f -
+curl 'https://raw.githubusercontent.com/gabrielpioto/multi-installer/main/rpi/docker-compose.yml' | docker compose -f - up -d
