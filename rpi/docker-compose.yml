@@ -47,12 +47,13 @@ services:
       - 6881:6881/udp
     restart: unless-stopped
 
-  ddclient:
-    image: lscr.io/linuxserver/ddclient:latest
-    container_name: ddclient
-    environment:
-      - PUID=1000
-      - PGID=1000
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
     volumes:
-      - /media/HD-E1/rpi/configs/ddclient:/config
+      - /media/HD-E1/rpi/configs/cloudflare:/home/nonroot/.cloudflared/
+    command: tunnel run raspberry
     restart: unless-stopped
+    
+
+  
