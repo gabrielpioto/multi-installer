@@ -41,6 +41,4 @@ services:
       - /media/HD-E1/rpi/configs/cloudflare:/home/nonroot/.cloudflared/
     command: tunnel run raspberry
     restart: unless-stopped
-    
-
-  
+    network_mode: host
